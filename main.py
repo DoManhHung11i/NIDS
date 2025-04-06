@@ -37,9 +37,9 @@ def main(load_dataset: bool, seed: int):
     
     # Định nghĩa đường dẫn mô hình
     model_paths = {
-        "KNN": "/home/kali/Desktop/NIDS/intrusion_detection_systems/models/saved_models/CIC_2017_KNN.pkl",
-        "RF": "/home/kali/Desktop/NIDS/intrusion_detection_systems/models/saved_models/CIC_2017_RF.pkl",
-        "MLP": "/home/kali/Desktop/NIDS/intrusion_detection_systems/models/saved_models/CIC_2017_MLP.pkl"
+        "KNN": "./intrusion_detection_systems/models/saved_models/CIC_2017_KNN.pkl",
+        "RF": "./intrusion_detection_systems/models/saved_models/CIC_2017_RF.pkl",
+        "MLP": "./intrusion_detection_systems/models/saved_models/CIC_2017_MLP.pkl"
     }
     
     # Khởi tạo Adaptive MTD Manager

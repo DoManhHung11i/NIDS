@@ -5,4 +5,4 @@ from intrusion_detection_systems.models.all_models.logistic_regression import Lo
 from intrusion_detection_systems.models.all_models.mlp import mlp as mlp_model
 from intrusion_detection_systems.models.all_models.svc import svc as svc_model
 from intrusion_detection_systems.models.all_models.naive_bayes import naiveBayes as nb_model
-# from intrusion_detection_systems.models.all_models.cnn import cnn as cnn_model
+from intrusion_detection_systems.models.all_models.cnn import cnn as cnn_model

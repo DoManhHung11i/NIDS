@@ -1,2 +1,3 @@
 __pycache__/
 shared/data
+intrusion_detection_systems/models/saved_models/CIC_2017_*
