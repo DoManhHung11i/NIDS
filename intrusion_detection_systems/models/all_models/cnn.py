@@ -40,7 +40,7 @@ class cnn(m.Model):
         input_shape = (self.x_train.shape[1], 1)  # Thêm chiều cho CNN (nếu cần reshape)
         num_classes = len(set(self.y_train))  # Số lớp
 
-        # Tạo model CNN
+        # Create model CNN
         model = models.Sequential([
             layers.Conv1D(filters=64, kernel_size=3, activation='relu', input_shape=input_shape),
             layers.BatchNormalization(),
