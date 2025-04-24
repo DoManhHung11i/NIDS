@@ -16,7 +16,7 @@ def train_model(seed: int, load_dataset: bool, name_data: str) -> None:
             [
                 "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
                 # "./shared/data/CIC_2017/Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
-                # "./shared/data/CIC_2017/Friday-WorkingHours-Morning.pcap_ISCX.csv",
+                # "./shared/data/CIC_2017/Friday-WorkingHours-Morning.pcap_ISCX.csv"
                 # "./shared/data/CIC_2017/Monday-WorkingHours.pcap_ISCX.csv",
                 # "./shared/data/CIC_2017/Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
                 # "./shared/data/CIC_2017/Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
@@ -36,8 +36,8 @@ def train_model(seed: int, load_dataset: bool, name_data: str) -> None:
     # ================> Train the IDS model <===============
 
     # Train the IDS model
-    models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train.ravel(), x_test=df_preprocessed.x_test,
-                             y_test=df_preprocessed.y_test.ravel(), dataset="CIC_2017", models_type=["MLP"], save=True, seed=seed)
+    models = train_ids_model(x_train=df_preprocessed.x_train, y_train=df_preprocessed.y_train.to_numpy().ravel(), x_test=df_preprocessed.x_test,
+                             y_test=df_preprocessed.y_test.to_numpy().ravel(), dataset="CIC_2017", models_type=["MLP"], save=True, seed=seed)
 
     # Display IDS model metrics
     # Comment out this line if you do not want to see the metrics.
@@ -48,6 +48,7 @@ def train_model(seed: int, load_dataset: bool, name_data: str) -> None:
 
 
 if __name__ == "__main__":
+
     seed = 42
     load_dataset = True
     name_data = "CIC-IDS_2017_2"
