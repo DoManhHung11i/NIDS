@@ -2,4 +2,4 @@ __pycache__/
 shared/data 
 intrusion_detection_systems/models/saved_models
 .venv
-shared/data_prep/CIC17/CIC-IDS_2017_2.csv
+shared/data_prep/CIC17
