@@ -5,7 +5,7 @@
 # ======================================================================
 
 # ==================> Imports
-from intrusion_detection_systems.models import k_neig_model, dec_tree_model, r_forest_model, log_reg_model, mlp_model, svc_model, nb_model , cnn_model
+from intrusion_detection_systems.models import k_neig_model, dec_tree_model, r_forest_model, log_reg_model, mlp_model, svc_model, nb_model 
 from intrusion_detection_systems.metrics import CM, SMT, SMLM
 from shared.utils import save_model
 from typing import Any
@@ -19,7 +19,7 @@ models_types_default = {
     "MLP": mlp_model,
     "SVC": svc_model,
     "NB": nb_model,
-    "cnn": cnn_model
+
 }
 
 metrics_types = {"CM": CM, "SMT": SMT, "SMLM": SMLM}

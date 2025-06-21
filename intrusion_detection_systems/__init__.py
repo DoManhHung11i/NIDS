@@ -1,1 +1,3 @@
 from intrusion_detection_systems.ids_models import train_ids_model, show_model_metrics
+from intrusion_detection_systems.train_dl_model import train_model as train_dl_model
+from intrusion_detection_systems.train_dl_model import evaluate_model as evaluate_dl_model
