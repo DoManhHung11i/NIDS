@@ -1,10 +1,3 @@
-# ========================== IDS Models Runner =========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ======================================================================
-
-# ==================> Imports
 from intrusion_detection_systems.models import k_neig_model, dec_tree_model, r_forest_model, log_reg_model, mlp_model, svc_model, nb_model 
 from intrusion_detection_systems.metrics import CM, SMT, SMLM
 from shared.utils import save_model
