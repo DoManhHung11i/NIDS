@@ -1,10 +1,3 @@
-# ========================== Clear Data ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ================================================================
-
-# ==================> Imports
 import datetime
 import numpy as np
 import pandas as pd

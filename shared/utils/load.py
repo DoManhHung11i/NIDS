@@ -1,10 +1,3 @@
-# ========================== Load Data & Models Utils ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ==============================================================================
-
-# ==================> Imports
 import pandas as pd
 import pickle
 

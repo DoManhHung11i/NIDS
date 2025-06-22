@@ -1,10 +1,3 @@
-# ========================== Transform ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ================================================================
-
-# ==================> Imports
 import numpy as np
 
 from sklearn.preprocessing import Normalizer

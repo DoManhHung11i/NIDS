@@ -1,10 +1,3 @@
-# ========================== Data Preprocessing ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ======================================================================
-
-# ==================> Imports
 import pandas as pd
 
 from shared.preprocessing import CIC_2017, CIC_2018, CIC_2019, transform

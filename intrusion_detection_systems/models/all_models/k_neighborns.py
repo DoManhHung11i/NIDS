@@ -1,10 +1,3 @@
-# ========================== K Neighbors Classifier =========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# =============================================================================
-
-# ==================> Imports
 from sklearn.neighbors import KNeighborsClassifier
 import shared.models.model as m
 

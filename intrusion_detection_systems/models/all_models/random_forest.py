@@ -1,10 +1,3 @@
-# ========================== Random Forest Classifier =========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# =============================================================================
-
-# ==================> Imports
 import shared.models.model as m
 
 from sklearn.ensemble import RandomForestClassifier

@@ -1,10 +1,3 @@
-# ========================== Save Data & Models Utils ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ==============================================================================
-
-# ==================> Imports
 import pickle
 import pandas as pd
 
@@ -21,7 +14,7 @@ def save_model(model, name: str) -> None:
             None
     """
     # Its important to use binary mode
-    name = f"intrusion_detection_systems/models/saved_models/{name}"
+    name = f"intrusion_detection_systems/models/saved_models/{name}.pkl"
     save = open(name, 'wb')
 
     # source, destination
