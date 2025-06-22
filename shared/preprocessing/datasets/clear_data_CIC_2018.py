@@ -1,10 +1,3 @@
-# ========================== Clear Data - CIC IDS 2018 ==========================
-#
-#                   Author:  Sergio Arroni Del Riego
-#
-# ===============================================================================
-
-# ==================> Imports
 import pandas as pd
 import shared.preprocessing.clear_data as cd
 
