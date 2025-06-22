@@ -46,7 +46,7 @@ class MultiArmedBanditDLThompsonSampling:
                 model_copy = self._clone_model(model)
                 criterion = nn.CrossEntropyLoss()
                 optimizer = torch.optim.Adam(model_copy.parameters(), lr=0.001)
-                self.train_model(model_copy, train_loader, val_loader, criterion, optimizer, device, num_epochs=50)
+                self.train_model(model_copy, train_loader, val_loader, criterion, optimizer, device, num_epochs=100)
 
                 self.arms[arm_id] = model_copy
                 acc = self._compute_reward(model_copy, val_loader)

@@ -17,7 +17,7 @@ BUFFER_CAPACITY = 200_000
 GAMMA = 0.99
 BATCH_SIZE = 256
 TARGET_UPDATE_FREQ = 1000
-NUM_EPOCHS = 10
+NUM_EPOCHS = 30
 RANDOM_SEED = 42
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
@@ -116,6 +116,7 @@ class DQNModelSelector:
         self.kmeans = KMeans(n_clusters=n_clusters, random_state=RANDOM_SEED)
         self.agents = []
         self.n_clusters = n_clusters
+        self.cluster_models = []
 
     def train(self, X, y):
         Xs = self.scaler.fit_transform(X)
@@ -145,10 +146,10 @@ class DQNModelSelector:
                 model_copy = copy.deepcopy(model)
                 optimizer = torch.optim.Adam(model_copy.parameters(), lr=0.001)
                 criterion = nn.CrossEntropyLoss()
-                model_copy = train_dl_model(model_copy, train_loader, val_loader, criterion, optimizer, device, num_epochs=50)
+                model_copy = train_dl_model(model_copy, train_loader, val_loader, criterion, optimizer, device, num_epochs=100)
                 trained_models.append(model_copy)
 
-            self.models = trained_models
+            self.cluster_models.append(trained_models)
             state_dim = X_cluster.shape[1]
             action_dim = len(self.models)
             agent = DQNAgent(state_dim, action_dim)
@@ -164,7 +165,7 @@ class DQNModelSelector:
 
                     eps = epsilon_by_frame(agent.frame_idx)
                     act = agent.select_action(state, eps)
-                    model = self.models[act]
+                    model = self.cluster_models[cluster_id][act]
 
                     # Reshape input theo loại model
                     if isinstance(model, cnn_model):
@@ -199,7 +200,7 @@ class DQNModelSelector:
             state = torch.tensor(feat, dtype=torch.float32).to(device)
             agent = self.agents[cluster_id]
             act = agent.select_action(state.cpu().numpy(), epsilon=0.0)
-            model = self.models[act]
+            model = self.cluster_models[cluster_id][act]
             input_tensor = state.unsqueeze(0).to(device)
 
             # Nếu là CNN hoặc RNN thì reshape phù hợp
