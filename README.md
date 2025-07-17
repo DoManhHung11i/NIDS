@@ -1,6 +1,6 @@
 # A Defense Mechanism Against Adversarial Attacks on Intrusion Detection Systems Based on Moving Target Defense and Reinforcement Learning
 ## Authors
-- **Truong Duc Hao** (Student ID: 22520406)  
+- **Truong Duc Hao** (Student ID: 22520407)  
 - **Do Manh Hung** (Student ID: 22520500)
 
 ## Supervisors
